@@ -23,6 +23,9 @@ public class CoronavirusDataService {
 
     private List<LocationStatistics> allStatistics = new ArrayList<>();
 
+    public List<LocationStatistics> getAllStatistics() {
+        return allStatistics;
+    }
 
     @Scheduled(cron = "* * 1 * * *")
     @PostConstruct
@@ -39,8 +42,10 @@ public class CoronavirusDataService {
             LocationStatistics locationStatistics = new LocationStatistics();
             locationStatistics.setState(record.get("Province/State"));
             locationStatistics.setCountry(record.get("Country/Region"));
-            locationStatistics.setTotalCases(Integer.parseInt(record.get(record.size()-1)));
-            System.out.println(locationStatistics);
+            int latestCases=Integer.parseInt(record.get(record.size()-1));
+            int previousCases=Integer.parseInt(record.get(record.size()-2));
+            locationStatistics.setTotalCases(latestCases);
+            locationStatistics.setDelta(latestCases-previousCases);
             newStatistics.add(locationStatistics);
         }
         this.allStatistics = newStatistics;
