@@ -50,7 +50,7 @@ Contributions and feedback are highly valued. If you have suggestions for improv
 For inquiries and collaborations, please feel free to reach out:
 
 - **Email:** arvindjei11@gmail.com
-- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/arvind-jei/)
+- **LinkedIn:** [LinkedIn](https://www.linkedin.com/in/arvind-jei/)
 
 
 
